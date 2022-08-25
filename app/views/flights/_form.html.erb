@@ -1,3 +1,25 @@
 <h1 class="title is-3">Book a Flight</h1>
 
+<%= form_with model: @flight,method: :get do |f| %>
+   
+<h4>From
+<%= f.select :departure_airport_id, options_for_select(@flight_options)%></h4>
+<h4>To
+<%= f.select :arrival_airport_id, options_for_select(@flight_options) %>
+</h4>
+<h4>Date 
+<%=f.select :date,options_for_select(@flight_options1)%>
+</h4>
+<h4>
+Number of Seats:
+<%=f.select :passangers,[1,2,3,4,5,6]%>
+</h4>
+<%=f.submit "Search" %>
+
+
+<% end %>
+
   
+
+  
+   

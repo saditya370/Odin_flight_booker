@@ -1,0 +1,72 @@
+
+  <h2 class="title is-4">Search results</h2>
+
+ 
+<% if @avail_flights.any? %>
+  
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Flight No.</th>
+          <th>Departure Airport</th>
+          <th>Arrival Airport</th>
+          <th>Date</th>
+          <th>Departs at</th>
+          <th>Flight Duration</th>
+          <th>Book your Ticket<th>
+          
+         
+        </tr>
+      </thead>
+      <tbody>
+        <% @avail_flights.each do |flight| %>
+          <tr>
+            <td><%= flight.id %></td>
+            <td><%= flight.departure_airport.airport_name %> </td>
+            <td><%= flight.arrival_airport.airport_name %></td>
+            <td><%= flight.flight_date.strftime('%F') %></td>
+            <td><%= flight.flight_date.strftime('%H:%M') %></td>
+            <td><%= flight.flight_duration %> minutes</td>
+              <td><%= link_to "Book",{},class: "btn btn-dark"%></td>
+         
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>Sorry there are no flights available for your search. 😞</p>
+  <% end %>
+  
+  <!--
+  <% if @avail_flights.any? %>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Flight No.</th>
+          <th>Departure Airport</th>
+          <th>Arrival Airport</th>
+          <th>Date</th>
+          <th>Departs at</th>
+          
+         
+        </tr>
+      </thead>
+      <tbody>
+        <% @flights.each do |flight| %>
+          <tr>
+            <td><%= flight.id %></td>
+            <td><%= flight.departure_airport.airport_name %> </td>
+            <td><%= flight.arrival_airport.airport_name %></td>
+            <td><%= flight.flight_date.strftime('%F') %></td>
+            <td><%= flight.flight_date.strftime('%H:%M') %></td>
+            <td><%= flight.flight_duration %> minutes</td>
+         
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>Sorry there are no flights available for your search. 😞</p>
+  <% end %>
+-->
