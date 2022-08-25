@@ -1,0 +1,23 @@
+<h1>Bookings#new</h1>
+<%= form_with model: @booking,method: :post do |form| %>
+ 
+ <%=form.fields_for :passangers do |f|%>
+  <div> 
+  <%# <%debugger%> %>
+   <%=f.label :name%>
+   <%=f.text_field :name%>
+   </div>
+
+<div>
+   <%=f.label :email%>
+   <%=f.text_field :email%>
+</div>
+
+<%=f.submit "Search" %>
+<%end%>
+
+<% end %>
+
+  
+
+
