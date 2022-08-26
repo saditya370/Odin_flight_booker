@@ -24,7 +24,7 @@
             <td><%= flight.flight_date.strftime('%F') %></td>
             <td><%= flight.flight_date.strftime('%H:%M') %></td>
             <td><%= flight.flight_duration %> minutes</td>
-            <td><%= link_to "Book",new_booking_path%></td>
+         <td><%= link_to "Book",new_booking_path(flight_id: flight.id)%></td>
           </tr>
         <% end %>
       </tbody>
