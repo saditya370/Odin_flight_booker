@@ -1,10 +1,11 @@
-<h1>Bookings#new</h1>
+<h1>Fill your details</h1>
 <%= form_with model: @booking,method: :post,html:{"data-turbo" => false} do |form| %>
  <%x=1%>
- <%@seat.times do%>
- <%=form.fields_for :passanger do |f|%>
+
+ <%=form.fields_for :passangers do |f|%>
   <div> 
-  <%# <%debugger%> %>
+ 
+    <%= "Passenger #{x}" %><br />
    <%=f.label :name%>
    <%=f.text_field :name%>
    </div>
@@ -17,7 +18,7 @@
 <%x+=1%>
 <%end%>
 <%= form.hidden_field :flight_id, value: params[:flight_id] %>
-<%end%>
+
 <%=form.submit "Search" %>
 
 <% end %>

@@ -24,11 +24,84 @@
             </tr>
           </tbody>
         </table>
-      
+
+         <h1 class="title">
+          Passenger details
+        </h1>
+        <table class="table is-fullwidth has-text-left">
+          <thead>
+            <tr>
+              <th>Passenger name</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @booking.passangers.each_with_index do |passenger, idx| %>
+            <tr>
+              <td><%= passenger.name %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+  
+        <h1 class="title">
+          Contact details
+        </h1>
+        <table class="table is-fullwidth has-text-left">
+          <thead>
+            <tr>
+              <th>Passenger name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @booking.passangers.each_with_index do |passenger, idx| %>
+            <tr>
+              <td><%= passenger.name %></td>
+              <td><%= passenger.email %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
   
         <%= link_to 'Book more flights', root_path, class: "button is-large is-dark is-outlined" %>
 
       </div>
     </div>
   </div>
+
+
+
+      
+  
+       
+
+      </div>
+    </div>
+  </div>
 </section>
+  
+
+
+
+
+
+
+
+
+
+<!--
+<%x=1%>
+<% @booking.passangers.each do |f| %>
+
+<h5><%= "   #{x} Passenger" %></h5>
+<h6>Name: <%=f.name%></h6>
+ 
+ <h6>Email: <%=f.email%></h6>
+ 
+ <%x= x+ 1%>
+<%end%>
+<br>
+<section>
+ <%= link_to 'Book more flights', root_path, class: "button is-large is-dark is-outlined" %>
+</section>
+-->

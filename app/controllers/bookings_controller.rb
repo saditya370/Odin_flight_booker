@@ -6,7 +6,8 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @seat = params[:seats].to_i
-   @seat.times{ @booking.build_passanger}
+    
+   @seat.times{ @booking.passangers.build}
     @flights = Flight.find_by(params[:flight_id])
     
   end
@@ -31,7 +32,7 @@ class BookingsController < ApplicationController
   private
   def booking_params
 
-      params.require(:booking).permit(:flight_id,{passanger_attributes: [:passanger_id,:passanger_id,:name,:email]})
+      params.require(:booking).permit(:flight_id,{passangers_attributes: [:passanger_id,:passanger_id,:name,:email]})
   end
 
 
