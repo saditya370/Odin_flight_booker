@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
    
     if @booking.save
       flash[:notice] =  "Bookings Successfull! "
+      TicketMailer.with(booking: @booking).booking_mail.deliver_now!
       redirect_to booking_path(@booking)
     else
       render :new,status: :unprocessable_entity

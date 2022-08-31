@@ -20,7 +20,7 @@
 # b = 0
 # c = air.length
 
-# while b<air.length
+# while b<c
 #     i =0
 #  while i<c-1
 #     Flight.create(departure_airport_id: air[i] ,arrival_airport_id: air[i+1],flight_duration: 5,flight_date: "25-02-2023",)
